@@ -12,7 +12,7 @@ public class Virus : MonoBehaviour
 
     GameObject modelo;
 
-    public void Start()
+    public void Awake()
     {
         modelo = transform.Find("Modelo").gameObject;
         direccion = Quaternion.Euler(0, Random.value * 360, 0) * new Vector3(0, 0, 1);
@@ -22,7 +22,7 @@ public class Virus : MonoBehaviour
     {
         transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
 
-        CheckBordes();
+        BordePantalla.Check(transform);
     }
 
     public void Herir()
@@ -35,22 +35,13 @@ public class Virus : MonoBehaviour
             foreach (GameObject go in spawn)
             {
                 y += 360 / spawn.Count;
-                Instantiate(go, transform.position + ((Quaternion.Euler(0, y, 0) * new Vector3(0, 0, 1)) * 0.3f), Quaternion.identity);
+                GameObject obj = Instantiate(go, transform.position + ((Quaternion.Euler(0, y, 0) * new Vector3(0, 0, 1)) * 0.3f), Quaternion.identity);
+                if (obj.GetComponent<Virus>() != null)
+                    SpawnEnemigos.VirusNuevo(obj.GetComponent<Virus>());
             }
 
+            SpawnEnemigos.VirusMuerto(this);
             Destroy(gameObject);
         }
-    }
-
-    void CheckBordes()
-    {
-        if (Camera.main.WorldToScreenPoint(transform.position).x < 0)
-            transform.position += new Vector3(20, 0, 0);
-        if (Camera.main.WorldToScreenPoint(transform.position).x > Screen.width)
-            transform.position += new Vector3(-20, 0, 0);
-        if (Camera.main.WorldToScreenPoint(transform.position).y < 0)
-            transform.position += new Vector3(0, 0, 16);
-        if (Camera.main.WorldToScreenPoint(transform.position).y > Screen.height)
-            transform.position += new Vector3(0, 0, -16);
     }
 }

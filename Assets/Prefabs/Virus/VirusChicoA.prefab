@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 1
-  velocidad: 1
+  velocidad: 3
   spawn: []
 --- !u!135 &135007497554141396
 SphereCollider:

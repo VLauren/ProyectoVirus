@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 1
-  velocidad: 0.5
+  velocidad: 2
   spawn:
   - {fileID: 1005329897031780, guid: 57d755b9b5da3824d8380271243d71bd, type: 2}
   - {fileID: 1005329897031780, guid: 57d755b9b5da3824d8380271243d71bd, type: 2}
