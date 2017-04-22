@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Virus : MonoBehaviour {
+public class Virus : MonoBehaviour
+{
+    public int vida = 1;
+    public List<GameObject> spawn;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void Herir()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Disparo : MonoBehaviour
 {
-	void Start ()
+    public static float VELOCIDAD = 10;
+
+    void Update ()
     {
-		
-	}
-	
-	void Update ()
+        transform.Translate(0, 0, VELOCIDAD * Time.deltaTime);
+    }
+
+    void OnTriggerEnter(Collider c)
     {
-		
-	}
+        if (c.tag == "Virus")
+        {
+            c.GetComponent<Virus>().Herir();
+            Destroy(gameObject);
+        }
+    }
 }
