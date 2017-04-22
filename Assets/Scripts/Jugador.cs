@@ -41,5 +41,18 @@ public class Jugador : MonoBehaviour
             if (disparo != null)
                 Instantiate(disparo, transform.position + transform.forward, transform.rotation);
 
+        CheckBordes();
+    }
+
+    void CheckBordes()
+    {
+        if (Camera.main.WorldToScreenPoint(transform.position).x < 0)
+            transform.position += new Vector3(20, 0, 0);
+        if (Camera.main.WorldToScreenPoint(transform.position).x > Screen.width)
+            transform.position += new Vector3(-20, 0, 0);
+        if (Camera.main.WorldToScreenPoint(transform.position).y < 0)
+            transform.position += new Vector3(0, 0, 16);
+        if (Camera.main.WorldToScreenPoint(transform.position).y > Screen.height)
+            transform.position += new Vector3(0, 0, -16);
     }
 }
