@@ -7,8 +7,11 @@ public class Jugador : MonoBehaviour
     public static float VELOCIDAD_MAXIMA = 4;
     public static float ACCELERACION = 0.2f;
     public static float VELOCIDAD_ROTACION = 150;
+    public static bool APLICAR_MUNICION = true;
 
     public GameObject disparo;
+
+    public int municion = 3;
 
     Vector3 inercia = Vector3.zero;
 
@@ -37,9 +40,13 @@ public class Jugador : MonoBehaviour
 
         // Disparo
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && (!APLICAR_MUNICION || municion > 0))
+        {
             if (disparo != null)
                 Instantiate(disparo, transform.position + transform.forward, transform.rotation);
+            if (APLICAR_MUNICION)
+                municion--;
+        }
 
         BordePantalla.Check(transform);
     }
@@ -52,6 +59,12 @@ public class Jugador : MonoBehaviour
 
             SpawnEnemigos.GameOver();
             Destroy(gameObject);
+        }
+
+        if (c.tag == "Municion")
+        {
+            municion += c.GetComponent<Municion>().cantidad;
+            Destroy(c.gameObject);
         }
     }
 }

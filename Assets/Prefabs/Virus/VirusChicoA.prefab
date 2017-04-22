@@ -124,7 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 1
   velocidad: 3
-  spawn: []
+  spawn:
+  - {fileID: 1235296017062512, guid: ca9e01e383f9ca0459aa4d92125df8eb, type: 2}
 --- !u!135 &135007497554141396
 SphereCollider:
   m_ObjectHideFlags: 1

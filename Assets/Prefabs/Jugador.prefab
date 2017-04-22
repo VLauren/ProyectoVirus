@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disparo: {fileID: 1469986602165802, guid: 33567fe54ebcad64483d7370742faf2e, type: 2}
+  municion: 3
 --- !u!135 &135013315692216222
 SphereCollider:
   m_ObjectHideFlags: 1
