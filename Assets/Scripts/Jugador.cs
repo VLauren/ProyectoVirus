@@ -46,6 +46,7 @@ public class Jugador : MonoBehaviour
                 Instantiate(disparo, transform.position + transform.forward, transform.rotation);
             if (APLICAR_MUNICION)
                 municion--;
+            Debug.Log(APLICAR_MUNICION + " " + municion);
         }
 
         BordePantalla.Check(transform);

@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4197205764162702}
   - component: {fileID: 33157160956462942}
   - component: {fileID: 23173086342144372}
+  - component: {fileID: 114559645959287588}
   m_Layer: 0
   m_Name: Modelo
   m_TagString: Untagged
@@ -291,6 +292,17 @@ MonoBehaviour:
   velocidad: 3
   spawn:
   - {fileID: 1235296017062512, guid: ca9e01e383f9ca0459aa4d92125df8eb, type: 2}
+--- !u!114 &114559645959287588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583454301811422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90748e3b8555e949b88c415b3e20037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135401498962674788
 SphereCollider:
   m_ObjectHideFlags: 1

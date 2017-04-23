@@ -36,11 +36,14 @@ public class Virus : MonoBehaviour
             {
                 y += 360 / spawn.Count;
                 GameObject obj = Instantiate(go, transform.position + ((Quaternion.Euler(0, y, 0) * new Vector3(0, 0, 1)) * 0.3f), Quaternion.identity);
+                Debug.Log(obj.name + " " + obj.transform.rotation.eulerAngles);
                 if (obj.GetComponent<Virus>() != null)
                     SpawnEnemigos.VirusNuevo(obj.GetComponent<Virus>());
             }
 
             SpawnEnemigos.VirusMuerto(this);
+            FX.GenerarFX(1,transform.position);
+            Camara.Shake();
             Destroy(gameObject);
         }
     }

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4094796792815914}
   - component: {fileID: 33813322117723416}
   - component: {fileID: 23207750752322104}
+  - component: {fileID: 114391434565625070}
   m_Layer: 0
   m_Name: Modelo
   m_TagString: Untagged
@@ -276,6 +277,17 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 1476395007
+--- !u!114 &114391434565625070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392823603732322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90748e3b8555e949b88c415b3e20037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114787938790617636
 MonoBehaviour:
   m_ObjectHideFlags: 1
