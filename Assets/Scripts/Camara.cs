@@ -38,5 +38,7 @@ public class Camara : MonoBehaviour
     public static void Shake()
     {
         instance.shake += 0.5f;
+        if (instance.shake > 1)
+            instance.shake = 1;
     }
 }

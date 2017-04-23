@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SpawnEnemigos : MonoBehaviour
 {
-    private const int INCREMENTO_VG = 3;
+    private const int INCREMENTO_VG = 1;
+    private const int INCREMENTO_VM = 1;
+    private const int INCREMENTO_VC = 1;
 
     private static SpawnEnemigos instance;
 
@@ -20,7 +22,9 @@ public class SpawnEnemigos : MonoBehaviour
 
     // ===========================
 
-    int virusGrandes = 3;
+    int virusGrandes = 1;
+    int virusMedianos = 1;
+    int virusChicos = 1;
 
     void Awake()
     {
@@ -55,12 +59,12 @@ public class SpawnEnemigos : MonoBehaviour
         instance.StartCoroutine(instance.Restart());
     }
 
+    float minX, minZ, maxX, maxZ, distancia;
     IEnumerator SpawnSiguienteNivel()
     {
         yield return new WaitForSeconds(1);
 
         // Hallo los bordes de la pantalla
-        float minX, minZ, maxX, maxZ, distancia;
         Plane plane = new Plane(Vector3.up, Vector3.zero);
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width, Screen.height, 0));
@@ -73,7 +77,18 @@ public class SpawnEnemigos : MonoBehaviour
         minX = ray.GetPoint(distancia).x;
         minZ = ray.GetPoint(distancia).z;
 
-        for (int i = 0; i < virusGrandes; i++)
+        Spawn(virusGrandes, VirusGrande);
+        Spawn(virusMedianos, VirusMedianoB);
+        Spawn(virusChicos, VirusChicoC);
+
+        virusGrandes += INCREMENTO_VG;
+        virusMedianos += INCREMENTO_VM;
+        virusChicos += INCREMENTO_VC;
+    }
+
+    void Spawn(int num, GameObject tipo)
+    {
+        for (int i = 0; i < num; i++)
         {
             Vector3 randomPosition = Vector3.zero;
             randomPosition.x = minX + Random.value * (maxX - minX);
@@ -94,18 +109,23 @@ public class SpawnEnemigos : MonoBehaviour
                     randomPosition.z = maxZ;
             }
 
-            GameObject v = Instantiate(VirusGrande, randomPosition, Quaternion.identity);
+            GameObject v = Instantiate(tipo, randomPosition, Quaternion.identity);
             virusActuales.Add(v.GetComponent<Virus>());
         }
-
-        virusGrandes += INCREMENTO_VG;
     }
 
     IEnumerator Restart()
     {
         yield return new WaitForSeconds(1);
 
+        Puntos.Reset();
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene(0);
     }
 }

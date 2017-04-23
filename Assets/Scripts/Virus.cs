@@ -5,6 +5,7 @@ using UnityEngine;
 public class Virus : MonoBehaviour
 {
     public int vida = 1;
+    public int puntos = 100;
     public float velocidad = 2;
     public List<GameObject> spawn;
     
@@ -44,6 +45,7 @@ public class Virus : MonoBehaviour
             SpawnEnemigos.VirusMuerto(this);
             FX.GenerarFX(1,transform.position);
             Camara.Shake();
+            Puntos.SumarPuntos(puntos);
             Destroy(gameObject);
         }
     }
