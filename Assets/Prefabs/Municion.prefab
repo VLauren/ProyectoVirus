@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4750177844522062}
   - component: {fileID: 135758817834832080}
   - component: {fileID: 114647175709344060}
+  - component: {fileID: 114963522891369328}
   m_Layer: 0
   m_Name: Municion
   m_TagString: Municion
@@ -182,6 +183,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb766bf70677cb8499a0088977a74b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocidad: 120
+--- !u!114 &114963522891369328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1235296017062512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d984ffa056c3c8b4e8e501c56c227225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempo: 10
 --- !u!122 &122915864262522982
 Halo:
   m_ObjectHideFlags: 1

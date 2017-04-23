@@ -98,7 +98,10 @@ public class Jugador : MonoBehaviour
 
         if (c.tag == "Municion")
         {
-            municion += c.GetComponent<Municion>().cantidad;
+            if (municion < 15)
+                municion += c.GetComponent<Municion>().cantidad;
+            else
+                municion++;
             Destroy(c.gameObject);
             Puntos.SumarPuntos(50);
         }
