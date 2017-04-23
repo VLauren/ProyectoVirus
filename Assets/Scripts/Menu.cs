@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
-        if (Input.anyKey)
+        if (Input.anyKeyDown)
         SceneManager.LoadScene(1);
 
     }

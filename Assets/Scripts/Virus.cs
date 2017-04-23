@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Virus : MonoBehaviour
 {
+    const float FRECUENCIA = 0.5f;
+    const float AMPLITUD = 0.2f;
+
     public int vida = 1;
     public int puntos = 100;
     public float velocidad = 2;
@@ -12,18 +15,25 @@ public class Virus : MonoBehaviour
     Vector3 direccion;
 
     GameObject modelo;
+    float tIni;
+    Vector3 scaleIni;
 
     public void Awake()
     {
         modelo = transform.Find("Modelo").gameObject;
         direccion = Quaternion.Euler(0, Random.value * 360, 0) * new Vector3(0, 0, 1);
+        tIni = Random.value;
+        scaleIni = modelo.transform.localScale;
     }
 
     void Update()
     {
         transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
-
         BordePantalla.Check(transform);
+
+        float sX = Mathf.Sin(Mathf.PI * 2 * (Time.time * FRECUENCIA + tIni)) * AMPLITUD;
+        float sZ = Mathf.Cos(Mathf.PI * 2 * (Time.time * FRECUENCIA + tIni)) * AMPLITUD;
+        modelo.transform.localScale = new Vector3(sX, 0, sZ) + scaleIni;
     }
 
     public void Herir()

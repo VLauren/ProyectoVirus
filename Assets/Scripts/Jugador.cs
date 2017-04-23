@@ -15,6 +15,7 @@ public class Jugador : MonoBehaviour
 
     bool propulsion = false;
     GameObject objetoPropulsion;
+    float contMunicion;
 
     Vector3 inercia = Vector3.zero;
 	
@@ -60,6 +61,8 @@ public class Jugador : MonoBehaviour
         transform.Translate(inercia * Time.deltaTime, Space.World);
 
         // Disparo
+        if (Input.GetButtonDown("Fire1") && APLICAR_MUNICION && municion == 0)
+            Interfaz.SinMunicion();
 
         if (Input.GetButtonDown("Fire1") && (!APLICAR_MUNICION || municion > 0))
         {
@@ -67,11 +70,20 @@ public class Jugador : MonoBehaviour
                 Instantiate(disparo, transform.position + transform.forward, transform.rotation);
             if (APLICAR_MUNICION)
                 municion--;
-            Debug.Log(APLICAR_MUNICION + " " + municion);
         }
 
         BordePantalla.Check(transform);
         Interfaz.SetMunicion(municion);
+
+        transform.Find("Cadena").gameObject.SetActive(municion != 0);
+
+        if (municion == 0)
+            contMunicion += Time.deltaTime;
+        else
+            contMunicion = 0;
+
+        if (contMunicion > 3)
+            municion++;
     }
 
     void OnTriggerEnter(Collider c)
@@ -88,6 +100,7 @@ public class Jugador : MonoBehaviour
         {
             municion += c.GetComponent<Municion>().cantidad;
             Destroy(c.gameObject);
+            Puntos.SumarPuntos(50);
         }
     }
 }

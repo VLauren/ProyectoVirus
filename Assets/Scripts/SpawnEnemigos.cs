@@ -117,6 +117,13 @@ public class SpawnEnemigos : MonoBehaviour
     IEnumerator Restart()
     {
         yield return new WaitForSeconds(1);
+        bool b = false;
+        while (!b)
+        {
+            if (Input.anyKeyDown)
+                b = true;
+            yield return null;
+        }
 
         Puntos.Reset();
         Scene scene = SceneManager.GetActiveScene();
