@@ -375,7 +375,7 @@ Prefab:
     - target: {fileID: 198824581391569894, guid: 0358e2ff90a427d43a7036275e29f8e0,
         type: 2}
       propertyPath: ShapeModule.boxY
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 198824581391569894, guid: 0358e2ff90a427d43a7036275e29f8e0,
         type: 2}
