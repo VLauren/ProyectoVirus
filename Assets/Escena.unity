@@ -143,7 +143,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1402408527606174, guid: fc79e674b3ca14c45acc7a55db82003a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc79e674b3ca14c45acc7a55db82003a, type: 2}
@@ -508,15 +508,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7322761a4728824b911334aef9c540d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VirusGrande: {fileID: 1445836043350908, guid: 3c317d821f01dc1479bb5f4a51d1410f,
+  VirusGrande: {fileID: 1236690407798430, guid: eff949e71f5632a4c883c87b3023b5e5,
     type: 2}
-  VirusMedianoA: {fileID: 1445836043350908, guid: 5caf0756d9451584e8311705d15dbb4a,
+  VirusMedianoA: {fileID: 1650533053439564, guid: 8a64003fa2539ad498aed68a8df66e42,
     type: 2}
-  VirusMedianoB: {fileID: 1445836043350908, guid: 168a9b9a4b8ecf047bc0e06f592a78cd,
+  VirusMedianoB: {fileID: 1141304520419716, guid: 501e3fe3cf5e7b442a0b6b0f753c0de8,
     type: 2}
-  VirusChicoA: {fileID: 1005329897031780, guid: 57d755b9b5da3824d8380271243d71bd,
+  VirusChicoA: {fileID: 1157669172523658, guid: aea618d6d2a03c849a2a02be497d75b9,
     type: 2}
-  VirusChicoB: {fileID: 1005329897031780, guid: 1d8897bb46b324d479c6970e67ac3265,
+  VirusChicoB: {fileID: 1980743936801800, guid: 222f0399f3ba4b549af8e53bce9d22b7,
     type: 2}
-  VirusChicoC: {fileID: 1005329897031780, guid: 430c3db285140f14ba598c42fb4b8ef8,
+  VirusChicoC: {fileID: 1562537234691406, guid: 583c69381ff1ac34eb48e3181b2b0819,
     type: 2}
