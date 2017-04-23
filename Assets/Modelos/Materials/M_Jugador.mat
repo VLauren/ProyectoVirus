@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Mat01
+  m_Name: M_Jugador
   m_Shader: {fileID: 4800000, guid: 078cf9beced3ecc46b5e93c034254110, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -77,6 +77,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
+        name: PixelSnap
+      second: 0
+    - first:
         name: _BumpScale
       second: 1
     - first:
@@ -87,22 +90,22 @@ Material:
       second: 1
     - first:
         name: _DstBlend
-      second: 0
+      second: 10
     - first:
         name: _GlossMapScale
-      second: 1
+      second: 0.249
     - first:
         name: _Glossiness
-      second: 0
+      second: 0.5
     - first:
         name: _GlossyReflections
       second: 1
     - first:
         name: _Metallic
-      second: 1
+      second: 0
     - first:
         name: _Mode
-      second: 0
+      second: 3
     - first:
         name: _OcclusionStrength
       second: 1
@@ -111,13 +114,10 @@ Material:
       second: 0.02
     - first:
         name: _RimPower
-      second: 3
-    - first:
-        name: _Shininess
-      second: 0.078125
+      second: 1.8
     - first:
         name: _SmoothnessTextureChannel
-      second: 0
+      second: 1
     - first:
         name: _SpecularHighlights
       second: 1
@@ -129,11 +129,11 @@ Material:
       second: 0
     - first:
         name: _ZWrite
-      second: 1
+      second: 0
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 0.35294116, g: 0.35294116, b: 0.35294116, a: 0.347}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}

@@ -14,6 +14,7 @@ public class SpawnEnemigos : MonoBehaviour
     public GameObject VirusMedianoB;
     public GameObject VirusChicoA;
     public GameObject VirusChicoB;
+    public GameObject VirusChicoC;
 
     List<Virus> virusActuales = new List<Virus>();
 
