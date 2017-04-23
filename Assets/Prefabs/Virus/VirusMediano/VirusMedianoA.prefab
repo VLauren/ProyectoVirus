@@ -302,8 +302,8 @@ MonoBehaviour:
   vida: 1
   velocidad: 2
   spawn:
-  - {fileID: 1005329897031780, guid: 57d755b9b5da3824d8380271243d71bd, type: 2}
-  - {fileID: 1005329897031780, guid: 57d755b9b5da3824d8380271243d71bd, type: 2}
+  - {fileID: 1157669172523658, guid: aea618d6d2a03c849a2a02be497d75b9, type: 2}
+  - {fileID: 1157669172523658, guid: aea618d6d2a03c849a2a02be497d75b9, type: 2}
   - {fileID: 1235296017062512, guid: ca9e01e383f9ca0459aa4d92125df8eb, type: 2}
   - {fileID: 1235296017062512, guid: ca9e01e383f9ca0459aa4d92125df8eb, type: 2}
 --- !u!135 &135191572176813544
