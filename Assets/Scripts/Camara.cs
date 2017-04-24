@@ -15,7 +15,8 @@ public class Camara : MonoBehaviour
     {
         instance = this;
         posInicial = transform.position;
-        jugador = GameObject.Find("Jugador").transform;
+        if(jugador != null)
+            jugador = GameObject.Find("Jugador").transform;
     }
 
     void Update()
